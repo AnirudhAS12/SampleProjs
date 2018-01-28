@@ -4,7 +4,7 @@ import Form from '../../form/js/form';
 import data from './jsondata';
 import PlayerList from '../../playerlist/js/playerlist';
 import Statistics from '../../scorestatistic/js/statistics';
-import FilterDivision from '../../filterdivision/js/filterdivision';
+import FilterDivision from '../../filtergradewise/js/filterdivision';
 class Main extends Component {
   constructor(props)
   {   super(props);
@@ -148,7 +148,7 @@ else{
 
   render() {
     return (
-      <div>
+      <div style={{backgroundColor : "#F0E68C"}}>
        
        <Form addPlayer={this.addPlayer}/>
        <Table playerList={this.state.playerList} start={this.state.startIndex} end={this.state.endIndex} next={this.nextPage} prev={this.prevPage} left={this.state.leftbutton} right={this.state.rightbutton} sort={(e)=>{this.sortbyRollno}} sortName={(e)=>{this.sortbyName}}/>

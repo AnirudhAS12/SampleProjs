@@ -52,7 +52,7 @@ class Table extends Component {
     return (
       <center>
       <div className="col-md-10" style={{height:'250pt'}}>
-       <table className="table"  >
+       <table className="table">
         <thead>
       <tr>
       
