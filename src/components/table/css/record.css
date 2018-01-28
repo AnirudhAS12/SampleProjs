@@ -1,0 +1,16 @@
+.A{
+    background-color: blue;
+    color:white;
+}
+
+.B{
+    background-color: green;
+    color:white;
+}
+.C{
+    background-color: red;
+    color: white;
+}
+.modal-lg {
+    max-width: 80%;
+}
