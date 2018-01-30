@@ -6,21 +6,21 @@ import data from '../../playerlist/js/playerlist';
 class Table extends Component {
 
 
-    constructor(props)
-  {
-    super(props);
-    this.state={
-      sort_jersey: false,
-    sort_ODI: false,
-    sort_TEST: false,
-    sort_T20: false,
-    sort_matches: false,
-    sort_total: false,
-    sort_average: false, 
-    sort_name: false,
-    players : data
-    }
-  }
+  //   constructor(props)
+  // {
+  //   super(props);
+  //   this.state={
+  //     sort_jersey: false,
+  //   sort_ODI: false,
+  //   sort_TEST: false,
+  //   sort_T20: false,
+  //   sort_matches: false,
+  //   sort_total: false,
+  //   sort_average: false, 
+  //   sort_name: false,
+  //   players : data
+  //   }
+  // }
 
   state={
     sort_jersey: false,
@@ -33,18 +33,18 @@ class Table extends Component {
     sort_name: false,
   }
 
-  sortNumber(event, sortKey)
- {
-    const players = this.state.players;
-    players.sort((a,b) => a[sortKey] - (b[sortKey]))
-    this.setState({players})
-  }
-  sortName(event, sortKey)
- {
-    const players = this.state.players;
-    players.sort((a,b) => a[sortKey].localeCompare(b[sortKey]))
-    this.setState({players})
-  }
+//   sort(event, sortKey)
+//  {
+//     const players = this.state.players;
+//     players.sort((a,b) => a[sortKey] - (b[sortKey]))
+//     this.setState({players})
+//   }
+//   sortName(event, sortKey)
+//  {
+//     const players = this.state.players;
+//     players.sort((a,b) => a[sortKey].localeCompare(b[sortKey]))
+//     this.setState({players})
+//   }
  
  
   render() {

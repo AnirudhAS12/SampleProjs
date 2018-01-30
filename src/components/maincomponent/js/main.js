@@ -76,72 +76,75 @@ else{
 
 }
 
-// sortbyRollno=(flag,sortby)=>{
-//     let list=this.state.playerList;
-//     console.log(flag);
-//     list.sort((a,b)=> {
+sortNumber(flag,sortby){
+    let list=this.state.playerList;
+    console.log(flag);
+    list.sort(function(a,b){
    
-//         if(flag)
-//         {
-//             let n=parseInt(a[sortby]);
-//         let m=parseInt(b[sortby]);
-//         console.log(n,m);
-//         return n-m;
-//     }
-//     else{
-//         let n=parseInt(a[sortby]);
-//         let m=parseInt(b[sortby]);
-//         console.log(n,m);
-//         return m-n;
-//     }
+        if(flag)
+        {
+            let n=parseInt(a[sortby]);
+        let m=parseInt(b[sortby]);
+        console.log(n,m);
+        return m-n;
+    }
+    else{
+        let n=parseInt(a[sortby]);
+        let m=parseInt(b[sortby]);
+        console.log(n,m);
+        return n-m;
+    }
       
     
-//     });
-//     console.log(list);
-//     this.setState({playerList: list});
-// }
-// sortbyName=(flag,sortby)=>{
+    });
+    console.log(list);
+    this.setState({playerList: list});
+}
+sortName(flag,sortby){
+    let list=this.state.playerList;
+    console.log(flag);
+    list.sort(function(a,b) {
+         let n=a[`${sortby}`].toLowerCase();
+        let m=b[`${sortby}`].toLowerCase();
+        if(flag)
+        {
+        if(n>m)
+            return -1;
+        if(m>n)
+            return 1;
+        return 0
+    }
+    else{
+
+        if(n>m)
+            return 1;
+        if(m>n)
+            return -1;
+        return 0;
+    }
+    });
+
+
+    
+    this.setState({playerList: list});
+     
+     
+}  
+//      sortNumber(event, sortKey)
+//  {
+//     // const players = this.state.players;
 //     let list=this.state.playerList;
-//     console.log(flag);
-//     list.sort((a,b) => {
-//          let n=a[`${sortby}`].toLowerCase();
-//         let m=b[`${sortby}`].toLowerCase();
-//         if(flag)
-//         {
-//         if(n>m)
-//             return -1;
-//         if(m>n)
-//             return 1;
-//         return 0
-//     }
-//     else{
-
-//         if(n<m)
-//             return 1;
-//         if(m<n)
-//             return -1;
-//         return 0;
-//     }
-//     });
-
-
+//     list.sort((a,b) => a[sortKey] - (b[sortKey]))
+//     this.setState({list})
+//   }
+//   sortName(event, sortKey)
+//  {
+//     // const players = this.state.players;
+//     let list=this.state.playerList;
     
-    // this.setState({playerList: list});
-     sortNumber(event, sortKey)
- {
-    // const players = this.state.players;
-    let list=this.state.playerList;
-    list.sort((a,b) => a[sortKey] - (b[sortKey]))
-    this.setState({list})
-  }
-  sortName(event, sortKey)
- {
-    // const players = this.state.players;
-    let list=this.state.playerList;
-    
-    list.sort((a,b) => a[sortKey].localeCompare(b[sortKey]))
-    this.setState({list})
-  }
+//     list.sort((a,b) => a[sortKey].localeCompare(b[sortKey]))
+//     this.setState({list})
+//   }
 
   
 
@@ -151,7 +154,7 @@ else{
       <div style={{backgroundColor : "#F0E68C"}}>
        
        <Form addPlayer={this.addPlayer}/>
-       <Table playerList={this.state.playerList} start={this.state.startIndex} end={this.state.endIndex} next={this.nextPage} prev={this.prevPage} left={this.state.leftbutton} right={this.state.rightbutton} sort={(e)=>{this.sortbyRollno}} sortName={(e)=>{this.sortbyName}}/>
+       <Table playerList={this.state.playerList} start={this.state.startIndex} end={this.state.endIndex} next={this.nextPage} prev={this.prevPage} left={this.state.leftbutton} right={this.state.rightbutton} sort={(list,flag)=>{this.sortNumber(list,flag)}} sortName={(list,flag)=>{this.sortbyName(list,flag)}}/>
        <center>
        <div className="row" style={{paddingTop:'20pt',paddingLeft:'20%'}}>
        <PlayerList player={this.state.playerList}/>
