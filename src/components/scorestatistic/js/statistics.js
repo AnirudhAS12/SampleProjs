@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../../../Sass/style.scss'
 
 
 class Statistics extends Component {
@@ -45,11 +46,11 @@ class Statistics extends Component {
     return (
         <div className="col-md-4">
 <div className="container">
-          
+          <h4>Statictics</h4>
   <table className="table">
     <thead>
         <tr>
-            <th>Game Formats</th>
+            <th id="th1">Game Formats</th>
             <th>Minimum</th>
             <th>Maximum</th>
             <th>Average</th>
